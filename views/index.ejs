@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=720, initial-scale=1.0">
+    <title>IoT 10902</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<script>
+    var toggleLED = function (LED_code) {
+        axios.post('/' + LED_code)
+    }
+
+    const socket = io.connect();
+    socket.on('LED1_changed', value => {
+        var TA = document.getElementById("LED1")
+        if (value == 1) {
+            TA.src = "./LED1-on.png";
+        } else {
+            TA.src = "./LED1-off.png";
+        }
+    });
+    socket.on('LED2_changed', value => {
+        var TA = document.getElementById("LED2")
+        if (value == 1) {
+            TA.src = "./LED2-on.png";
+        } else {
+            TA.src = "./LED2-off.png";
+        }
+    });
+</script>
+
+<body>
+
+    <% if (LED1==1) { %>
+        <a href="/" onclick="event.preventDefault(); toggleLED(1);">
+            <img id="LED1" src="./LED1-on.png" alt="">
+        </a>
+    <% } else { %>
+        <a href="/" onclick="event.preventDefault(); toggleLED(1);">
+            <img id="LED1" src="./LED1-off.png" alt="">
+        </a>
+    <% } %>
+
+    <% if (LED2==1) { %>
+        <a href="/" onclick="event.preventDefault(); toggleLED(2);">
+            <img id="LED2" src="./LED2-on.png" alt="">
+        </a>
+    <% } else { %>
+        <a href="/" onclick="event.preventDefault(); toggleLED(2);">
+            <img id="LED2" src="./LED2-off.png" alt="">
+        </a>
+    <% } %>
+
+</body>
+
+</html>
