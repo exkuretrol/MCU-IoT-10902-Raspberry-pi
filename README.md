@@ -3,9 +3,9 @@
 # 使用說明
 
 ```
-git clone blablabla
+git clone https://github.com/exkuretrol/MCU-IoT-10902-Raspberry-pi
 npm install
-cd IoT10902
+cd MCU-IoT-10902-Raspberry-pi
 ```
 
 記得把 `firebase_config.js` 裡面的設定改成自己的設定
