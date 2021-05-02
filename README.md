@@ -4,8 +4,8 @@
 
 ```
 git clone https://github.com/exkuretrol/MCU-IoT-10902-Raspberry-pi
-npm install
 cd MCU-IoT-10902-Raspberry-pi
+npm install
 ```
 
 記得把 `firebase_config.js` 裡面的設定改成自己的設定
