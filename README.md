@@ -10,4 +10,8 @@ npm install
 
 記得把 `firebase_config.js` 裡面的設定改成自己的設定
 
-![](assets/code.png)
+![fire base config](assets/code.png)
+
+改完之後在console執行 `npm start` 即可
+
+![intro](assets/intro.gif)
